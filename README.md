@@ -68,7 +68,7 @@ Usage
 2. Enter the saved Dungeon Seed and Population Seed into their respective boxes.
 3. Click the **Create** button found at the bottom of the page.
 
-## Re-populating an existing Dungeon with different enemies
+### Re-populating an existing Dungeon with different enemies
 1. From the Dungeon page, locate the **Re-populate** section.
 2. Enter your desired parameters into the form.
 3. Click the **Create** button found at the bottom of the page.
