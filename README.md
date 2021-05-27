@@ -1,5 +1,4 @@
 # Instant Dungeon - RPG Toolkit
-=================================================
 
 Table of contents
 -----------------
@@ -27,21 +26,35 @@ Installation
 Several libraries are required to use Instant Dungeon and can be installed using the following commands in the command line:
 * PIL
 ```bash
-python3 -m pip install --upgrade Pillow
+pip install --upgrade Pillow
 ```
-* Numpy
-* Scipy
-* PDFKit
-* Flask
-* WTForms
-Next, provide step-by-step instructions for installing the software, preferably with command examples that can be copy-pasted by readers into their software environments. For example:
-
+* Numpy + Scipy
 ```bash
-a command-line command here
+pip install --user numpy scipy
 ```
+* PDFKit
+```bash
+pip install pdfkit
+```
+* Flask
+```bash
+pip install Flask
+```
+* WTForms
+```bash
+pip install WTForms
+```
+
+After installing the required dependencies, Instant Dungeon can be ran locally by using the following steps:
+1. Clone this directory to your machine
+2. Open a Powershell terminal in the downloaded folder
+3. Run the Flask server using the following command:
+```bash
+python .\server.py
+```
+4. Navigate to http://127.0.0.1:5000/
 
  
-
 Usage
 -----
 
