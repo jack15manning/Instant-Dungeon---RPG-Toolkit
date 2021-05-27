@@ -9,7 +9,6 @@ Table of contents
 * [Known issues and limitations](#known-issues-and-limitations)
 * [Getting help](#getting-help)
 * [Contributing](#contributing)
-* [License](#license)
 * [Authors and history](#authors-and-history)
 * [Acknowledgments](#acknowledgments)
 
@@ -58,82 +57,58 @@ python .\server.py
 Usage
 -----
 
-This section explains the principles behind this README file.  If this repository were for actual _software_, this [Usage](#usage) section would explain more about how to run the software, what kind of output or behavior to expect, and so on.
+### Creating a new Dungeon
+1. From the Home page, fill in the Dungeon Layout and Population parameters as desired - or leave them as they are for a random Dungeon with the default settings.
+2. Click the **Create** buton found at the bottom of the page.
+3. Sit back and watch as your Dungeon is created for you.
+4. Make note of the Dungeon Seed and Population Seed, as these can be used to recreate a previously generated Dungeon if it is lost.
 
-### Basic operation
+### Recreating a previously generated Dungeon
+1. From the Home page, fill in the Dungeon Layout and Population parameters as they were for the Dungeon you want to recreate.
+2. Enter the saved Dungeon Seed and Population Seed into their respective boxes.
+3. Click the **Create** button found at the bottom of the page.
 
-A suggested approach for using this example README file is as follows:
+## Re-populating an existing Dungeon with different enemies
+1. From the Dungeon page, locate the **Re-populate** section.
+2. Enter your desired parameters into the form.
+3. Click the **Create** button found at the bottom of the page.
 
-1. Copy the [source file](README.md) for this file to your repository and commit it to your version control system
-2. Delete all the body text but keep the section headings
-3. Write your README content
-4. Commit the new text to your version control system
-5. Update your README file as your software evolves
-
-The first paragraph in the README file (under the title at the very top) should summarize your software in a concise fashion, preferably using no more than one or two sentences.
-
-<p align="center"><img width="80%" src=".graphics/screenshot-top-paragraph.png"></p>
-
-The space under the first paragraph and _before_ the [Table of Contents](#table-of-contents) is a good location for optional [badges](https://github.com/badges/shields), which are small visual tokens commonly used on GitHub repositories to communicate project status, dependencies, versions, DOIs, and other information.  The particular badges and colors you use depend on your project and personal tastes.
-
-The [Introduction](#introduction) and [Usage](#usage) sections are described above.
-
-In the [Known issues and limitations](#known-issues) section, summarize any notable issues and/or limitations of your software.  The [Getting help](#getting-help) section should inform readers of how they can contact you, or at least, how they can report problems they may encounter.  The [Contributing](#contributing) section is optional; if your repository is for a project that accepts open-source contributions, then this section is where you can explain to readers how they can go about making contributions.
-
-The [License](#license) section should state any copyright asserted on the project materials as well as the terms of use of the software, files and other materials found in the project repository.  Finally, the [Authors and history](#authors-and-history) section should inform readers who the authors are; it is also a place where you can acknowledge other contributions to the work and the use of other people's software or tools.
-
-### Additional options
-
-Some projects need to communicate additional information to users and can benefit from additional sections in the README file.  It's difficult to give specific instructions &ndash; a lot depends on your software, your intended audience, etc.  Use your judgment and ask for feedback from users or colleagues to help figure out what else is worth explaining.
+### Exporting a Dungeon Map
+1. From the Dungeon Page, click the **Export to PDF** button found below the Dungeon image and Room information.
+2. Open the PDF file in your chosen program after it has been downloaded to your device.
 
 
 Known issues and limitations
 ----------------------------
 
-In this section, summarize any notable issues and/or limitations of your software.  If none are known yet, this section can be omitted (and don't forget to remove the corresponding entry in the [Table of Contents](#table-of-contents) too); alternatively, you can leave this section in and write something along the lines of "none are known at this time".
+**Limitations**
+* Currently Instant Dungeon only supports the population of Dungeons with enemies from Dungeons & Dragons 5th Edition.
+
+**Known Issues**
+* Creating a *Tiny* sized Dungeon with a *Rectangular* shape often results in a Dungeon being created with only two rooms.
 
 
 Getting help
 ------------
 
-Inform readers of how they can contact you, or at least how they can report problems they may encounter.  This may simply be a request to use the issue tracker on your repository, but many projects have associated chat or mailing lists, and this section is a good place to mention those.
-
+If you have any issues with using the service, please send me an email at jack15manning@gmail.com
 
 Contributing
 ------------
 
-Mention how people can offer contributions, and point them to your guidelines for contributing.
-
-
-License
--------
-
-This README file is distributed under the terms of the [Creative Commons 1.0 Universal license (CC0)](https://creativecommons.org/publicdomain/zero/1.0/).  The license applies to this file and other files in the [GitHub repository](http://github.com/mhucka/readmine) hosting this file. This does _not_ mean that you, as a user of this README file in your software project, must also use CC0 license!  You may use any license for your work that you see fit.
-
+If you would like to make any changes to my system, clone the repository and make any additions you would like. Some aspects of the system have been created in an expandable way such that they are easily added to.
 
 Authors and history
 ---------------------------
 
-In this section, list the authors and contributors to your software project.  (The original author of this file is [Mike Hucka](http://www.cds.caltech.edu/~mhucka/).)  Adding additional notes here about the history of the project can make it more interesting and compelling.
+Instant Dungeon was created by myself (Jack Manning) alongside Dr James Mapp as part of my Third-year University project at The University of East Anglia.
 
 
 Acknowledgments
 ---------------
 
-If your work was funded by any organization or institution, acknowledge their support here.  In addition, if your work relies on other software libraries, or was inspired by looking at other work, it is appropriate to acknowledge this intellectual debt too.  For example, in the process of developing this file, I used not only my own ideas and experiences &ndash; I read many (sometimes contradictory) recommendations for README files and examined real READMEs in actual use, and tried to distill the best ideas into the result you see here.  Sources included the following:
+I would like to give a special thanks to Dr James Mapp for supervising my project and providing me with solutions whenever problems arose. Listed below are a number of sources which were used during the development of my project.
 
-* http://tom.preston-werner.com/2010/08/23/readme-driven-development.html
-* https://changelog.com/posts/top-ten-reasons-why-i-wont-use-your-open-source-project
-* https://thoughtbot.com/blog/how-to-write-a-great-readme
-* http://jonathanpeelle.net/making-a-readme-file
-* https://github.com/noffle/art-of-readme
-* https://github.com/noffle/common-readme
-* https://github.com/RichardLitt/standard-readme
-* https://github.com/jehna/readme-best-practices
-* https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
-* https://github.com/matiassingers/awesome-readme
-* https://github.com/cfpb/open-source-project-template
-* https://github.com/davidbgk/open-source-template/
-* https://www.makeareadme.com
-* https://github.com/lappleapple/feedmereadmes
-* https://github.com/badges/shields
+* 
+* https://gamedevelopment.tutsplus.com/tutorials/how-to-use-bsp-trees-to-generate-game-maps--gamedev-12268
+* https://guides.github.com/features/mastering-markdown/
