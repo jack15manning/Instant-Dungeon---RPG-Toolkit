@@ -109,6 +109,5 @@ Acknowledgments
 
 I would like to give a special thanks to Dr James Mapp for supervising my project and providing me with solutions whenever problems arose. Listed below are a number of sources which were used during the development of my project.
 
-* 
 * https://gamedevelopment.tutsplus.com/tutorials/how-to-use-bsp-trees-to-generate-game-maps--gamedev-12268
 * https://guides.github.com/features/mastering-markdown/
