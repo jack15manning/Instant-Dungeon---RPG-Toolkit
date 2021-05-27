@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Instant Dungeon</title>
+  </head>
+  
+  <body>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Instant Dungeon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="content" class="container-lg bg-light">
+        <div class="container-lg bg-light text-center">
+            <h2>Your Dungeon</h2>
+        </div>
+        <div class="text-center">
+            <img id="userImage" src="{{ user_image }}" alt="User Image">
+        </div>
+        <h3>Seeds:</h3>
+        <p>Dungeon Seed: {{ dunSeed }}<br>Population Seed: {{ popSeed }}</p>
+        <h3>Room Information</h3>
+        <p>Recommended Party Size: {{ partySize }}<br>Recommended Party Average Level: {{ partyLevel }}</p>
+        {% for item in data %}
+            <p>Room {{ item.roomIndex }}: <br>
+            {{item.enemyNumber}} x {{item.enemyName}} <br>
+            Approximate XP: {{item.approximateXp}}</p>
+        {% endfor %}
+    </div>
+    <div class="container-lg bg-light">     
+        <button id="savePDFbutton" class="btn btn-dark" onclick="demoFromHTML()">Export to PDF</button>
+        <form action="/repop" method="post" role="form">
+            <div class="form-group">
+            <h3>Re-populate Dungeon</h3>
+            <label for="Theme">Dungeon Theme:</label>
+            <select class="form-select" name="Theme">
+                <option value="everything">All</option>
+                <option value="beasts">Beasts</option>
+                <option value="humanoids">Humanoids</option>
+                <option value="elementals">Elementals</option>
+                <option value="monstrosities">Monstrosities</option>
+                <option value="constructs">Constructs</option>
+                <option value="dragons">Dragons</option>
+                <option value="fiends">Fiends</option>
+                <option value="undead">Undead</option>
+            </select>
+            
+            <label for="Density">Enemy Density:</label>
+            <select class="form-select" name="Density">
+                <option value="scarce">Scarce (33%)</option>
+                <option value="normal" selected="selected">Normal (75%)</option>
+                <option value="dense">Dense (90%)</option>
+                <option value="full">Full (100%)</option>
+            </select>
+            <label for="PartySize">Party Size (Leave 0 for average size of 3-5):</label>
+            <input type="number" class="form-control" id="PartySize" name="PartySize" min="0" max="10" value="0">
+                
+            <label for="PartyLevel">Party Average Level (Leave 0 for random level):</label>
+            <input type="number" class="form-control" id="PartyLevel" name="PartyLevel" min="0" max="20" value="0">
+                
+            <button type="submit" class="btn btn-dark">Create</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+
+<!-- This Script has been Copied from http://jsfiddle.net/xzZ7n/4861/ -->
+<script>  
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'a1');
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        source = $('#content')[0];
+
+        // we support special element handlers. Register them with jQuery-style 
+        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+        // There is no support for any other type of selectors 
+        // (class, of compound) at this time.
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        };
+        margins = {
+            top: 0,
+            bottom: 0,
+            left: 5,
+            width: 522
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+        pdf.fromHTML(
+        source, // HTML string or DOM elem ref.
+        margins.left, // x coord
+        margins.top, { // y coord
+            'width': margins.width, // max width of content on PDF
+            'elementHandlers': specialElementHandlers
+        },
+
+        function (dispose) {
+            // dispose: object with X, Y of the last line add to the PDF 
+            //          this allow the insertion of new lines after html
+            pdf.save('Dungeon.pdf');
+        }, margins);
+    }
+</script>
+  </body>
+  
+</html>

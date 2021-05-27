@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Instant Dungeon - About</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Instant Dungeon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class="container-lg bg-light">
+        <h2 class="text-center">About</h2>
+        <p>Instant Dungeon is an RPG Dungeon Toolkit created for my Third-year project in conjunction with my advisor, Dr James Mapp.
+        It has been designed and developed over the course of my third year at University and aims to deliver a rapid solution to creating RPG Dungeon Maps in a procedurally generated way. 
+        In addition, Instant Dungeon aims to offer a suitable method of populating these Dungeon Maps with appropriately levelled and themed enemies for a given Party size and Average Level.</p>
+        <h2 class="text-center">How to use Instant Dungeon</h2>
+        <p>Instant Dungeon has been designed in such a way that generating your next Dungeon Map is just a single click away. If you would like a completely random Dungeon based on our 
+        recommended parameters, simply click the 'Create' button on the home page, and you will be presented with a procedurally generated Dungeon Map populated with random enemies.
+        If you would prefer to have some influence over the Dungeon's Layout and which enemies populate it, then fill in the creation parameters with your own settings and see your 
+        own Dungeon come to life.</p>   
+        <h2 class="text-center">Parameters Explained</h2>
+        <ul>
+            <li><b>Dungeon Seed:</b> This parameter allows you to enter the Dungeon seed of a previously generated Dungeon and remake that exact same Map (This will only work if all of the parameters used are the same as the original). To generate a new Dungeon, leave this parameter at 0.</li>
+            <li><b>Dungeon Shape:</b> This parameter allows you to select whether your Dungeon will be shaped like a rectangle or a square.</li>
+            <li><b>Dungeon Size:</b> This parameter allows you to select the overall size of your Dungeon, ranging from Tiny (approx 25x20 squares) to Large (approx 70x50 squares).</li>
+            <li><b>Corridor Algorithm:</b> This parameter allows you to select how the corridors connecting rooms in the Dungeon will be generated. Selecting 'BSP' will result in linearly connected corridors, with few turns, whereas selecting 'Drunkard's Walk' will result in winding corridors with many twists and turns.</li>
+            <li><b>Tileset:</b> This parameter allows you to select which tileset is used to construct the Dungeon image.</li>
+            <li><b>Population Seed:</b> Much like the Dungeon Seed parameter, this can be used to populate a previously generated Dungeon with the same enemies that filled it before (Again this will only work if all of the parameters used are the same as the original). To populate with random enemies, leave this parameter at 0.</li>
+            <li><b>Dungeon Theme:</b> This parameter allows you to select which types of enemies will populate your Dungeon, ranging from Beasts to Undead (NOTE: the selection of some of these themes with specific party sizes and levels may result in no/few enemies being placed).</li>
+            <li><b>Enemy Density:</b> This parameter allows you to decide what percentage of Dungeon Rooms will contain an encounter/enemies. This can range from scarce, 33%, to Full, 100%.</li>
+            <li><b>Party Size:</b> This parameter allows you to populate your Dungeon with enemies appropriate for a specific amount of players, in conjunction with the Party Average Level parameter. Leave this at 0 for a random Party size between 3 and 5.</li>
+            <li><b>Party Average Level:</b> This parameter allows you to populate you Dungeon with enemies appropriate for a specific Party level, in conjunction with the Party Size parameter. Leave this at 0 for a random Party Average level.</li>
+        </ul>    
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>

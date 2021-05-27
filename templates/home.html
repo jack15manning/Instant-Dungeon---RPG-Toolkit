@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Instant Dungeon</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Instant Dungeon</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <div class="container-lg bg-light text-center">
+        <h2>Generate a Dungeon</h2>
+    </div>
+    <div class="container-lg bg-light">
+        <form action="" method="post" role="form">
+            <div class="form-group">
+                <h3>Dungeon Layout</h3>
+                <label for="Seed">Dungeon Seed (Leave 0 for new Dungeon):</label>
+                <input type="number" class="form-control" id="Seed" name="Seed" min="0" max="99999999" value="0">
+                
+                <label for="Shape">Dungeon Shape:</label>
+                <select class="form-select" name="Shape">
+                    <option value="Square">Square</option>
+                    <option value="Rectangle">Rectangle</option>
+                </select>
+               
+                <label for="Size">Dungeon Size:</label>
+                <select class="form-select" name="Size">
+                    <option value="1">Tiny</option>
+                    <option value="2">Small</option>
+                    <option value="3">Medium</option>
+                    <option value="4">Large</option>
+                </select>
+                
+                <label for="CorridorAlgorithm">Corridor Algorithm:</label>
+                <select class="form-select" name="CorridorAlgorithm">
+                    <option value="BSP">BSP</option>
+                    <option value="Drunkard">Drunkard's Walk</option>
+                </select>
+                
+                <label for="Tileset">Tileset:</label>
+                <select class="form-select" name="Tileset">
+                    <option value="Stone">Stone</option>
+                    <option value="Grass">Grass</option>
+                </select>
+                <br>
+                
+                
+                <h3>Dungeon Population</h3>
+                
+                <label for="PopSeed">Population Seed (Leave 0 for new Population):</label>
+                <input type="number" class="form-control" id="PopSeed" name="PopSeed" min="0" max="9999" value="0">
+            
+                <label for="Theme">Dungeon Theme:</label>
+                <select class="form-select" name="Theme">
+                    <option value="everything">All</option>
+                    <option value="beasts">Beasts</option>
+                    <option value="humanoids">Humanoids</option>
+                    <option value="elementals">Elementals</option>
+                    <option value="monstrosities">Monstrosities</option>
+                    <option value="constructs">Constructs</option>
+                    <option value="dragons">Dragons</option>
+                    <option value="fiends">Fiends</option>
+                    <option value="undead">Undead</option>
+                </select>
+                
+                <label for="Density">Enemy Density:</label>
+                <select class="form-select" name="Density">
+                    <option value="scarce">Sparse (33%)</option>
+                    <option value="normal" selected="selected">Normal (75%)</option>
+                    <option value="dense">Dense (90%)</option>
+                    <option value="full">Full (100%)</option>
+                </select>
+                <label for="PartySize">Party Size (Leave 0 for average size of 3-5):</label>
+                <input type="number" class="form-control" id="PartySize" name="PartySize" min="0" max="10" value="0">
+                
+                <label for="PartyLevel">Party Average Level (Leave 0 for random level):</label>
+                <input type="number" class="form-control" id="PartyLevel" name="PartyLevel" min="0" max="20" value="0">
+                
+                <button type="submit" class="btn btn-dark">Create</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  </body>
+</html>
